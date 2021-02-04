@@ -63,7 +63,7 @@ const SearchedPosts = ({ results }) =>
           <small>{date}</small>
           <p
             dangerouslySetInnerHTML={{
-              __html: description || excerpt,
+              __html: excerpt,
             }}
           />
         </div>
