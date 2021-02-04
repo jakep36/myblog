@@ -46,7 +46,6 @@ const SearchedPosts = ({ results }) =>
     results.map(node => {
       const date = node.date
       const title = node.title || node.slug
-      const description = node.description
       const excerpt = node.excerpt
       const slug = node.slug
 

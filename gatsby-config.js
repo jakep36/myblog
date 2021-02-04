@@ -1,12 +1,11 @@
 module.exports = {
   siteMetadata: {
     // edit below
-    title: `Gatsby Starter Personal Blog`,
-    author: `Gatsby`,
-    description: `A starter personal blog with styled components, dark mode, and Netlify CMS.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    title: `Jacob's Personal Blog`,
+    author: `Jacob Parsell`,
+    siteUrl: `https://jacobparsell.com/`,
     social: {
-      twitter: `gatsbyjs`,
+      twitter: `jakep36`,
     },
   },
   plugins: [
@@ -36,7 +35,6 @@ module.exports = {
                 rawBody
                 frontmatter {
                   title
-                  description
                   date(formatString: "MMMM DD, YYYY")
                 }
               }
@@ -45,7 +43,7 @@ module.exports = {
         `,
         ref: "id",
         index: ["title", "rawBody"],
-        store: ["id", "slug", "date", "title", "excerpt", "description"],
+        store: ["id", "slug", "date", "title", "excerpt"],
         normalizer: ({ data }) =>
           data.allMdx.nodes.map(node => ({
             id: node.id,
@@ -53,7 +51,6 @@ module.exports = {
             rawBody: node.rawBody,
             excerpt: node.excerpt,
             title: node.frontmatter.title,
-            description: node.frontmatter.description,
             date: node.frontmatter.date,
           })),
       },
